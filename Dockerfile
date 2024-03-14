@@ -26,6 +26,7 @@ RUN apt-get update -y \
     libpq-dev \
     postgresql-client \
     libcurl4 \
+    yarn \
     nodejs \
     git \
  && apt-get clean \
