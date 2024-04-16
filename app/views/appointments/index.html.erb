@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<div style="margin-botom: 25px; margin-left: 150px; margin-right: 150px">
+  <h1 style="margin-bottom: 25px;">Disponiveis</h1>
+
+  <table>
+
+    <tbody>
+      <% @appointments.each do |appointment| %>
+
+        <div class="card" style="margin-bottom: 25px;">
+              <h5 class="card-header"><%= appointment.client_name %></h5>
+          <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="appointments/<%= appointment.id %>/edit" class="btn btn-primary">Agendar</a>
+          </div>
+        </div>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+</div>
+
+
+
+

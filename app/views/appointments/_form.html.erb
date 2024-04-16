@@ -1,0 +1,32 @@
+<%= form_with(model: @appointment) do |f| %>
+
+<div class="card">
+  <div class="card-body">
+
+    <div class="mb-3">
+      <%= f.label :cpf, { class: "form-label"} %>
+      <%= f.text_field :document_number, { class: "form-control", placeholder: "Site Name" } %>
+    </div>
+
+    <div class="mb-3">
+      <%= f.label :nome, { class: "form-label"} %>
+      <%= f.text_field :client_name, { class: "form-control", placeholder: "Site Code" } %>
+    </div>
+
+
+    <%= f.submit "Finalizar agendamento", class: "btn btn-primary" %>
+
+  </div>
+</div>
+
+  <% if @appointment.errors.any? %>
+    <div class="card" id="error_explanation">
+      <h2><%= pluralize(@appointment.errors.count, "error") %> </h2>
+      <ul>
+      <% @appointment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<% end %>
