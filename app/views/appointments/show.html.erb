@@ -1,35 +1,43 @@
 <div style="margin: 25px">
   <div class="alert alert-success" role="alert">
-    <h4 class="alert-heading">Well done!</h4>
-    <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+    <h4 class="alert-heading">Tudo certo!</h4>
+    <p>Agendamento concluido com sucesso. Seus dados foram registrados no nosso sistema.</p>
     <hr>
-    <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+    <p class="mb-0">Entre em contato cosnosco caso tenha qualquer dúvida.</p>
   </div>
 
-  <p id="notice"><%= notice %></p>
 
   <p>
-    <strong>Start at:</strong>
-    <%= @appointment.start_at %>
+    <strong>Inicio:</strong>
+    <%= I18n.l(@appointment.start_at, format: "%d/%m de %Y às %H:%M") %>
   </p>
 
   <p>
-    <strong>End at:</strong>
-    <%= @appointment.end_at %>
+    <strong>Fim:</strong>
+    <%= I18n.l(@appointment.end_at, format: "%d/%m de %Y às %H:%M") %>
   </p>
 
   <p>
-    <strong>Document number:</strong>
+    <strong>CPF do paciente:</strong>
     <%= @appointment.document_number %>
   </p>
 
   <p>
-    <strong>Client name:</strong>
+    <strong>Nome do paciente:</strong>
     <%= @appointment.client_name %>
   </p>
 
-  <%= link_to 'Edit', edit_appointment_path(@appointment) %> |
-  <%= link_to 'Back', appointments_path %>
+  <p>
+    <strong>Nome do profissional:</strong>
+    <%= @appointment.professional.name %>
+  </p>
+
+  <p>
+    <strong>Especialidade:</strong>
+    <%= @appointment.expertise.name %>
+  </p>
+
+  <%= link_to 'Voltar', appointments_path %>
 </div>
 
 

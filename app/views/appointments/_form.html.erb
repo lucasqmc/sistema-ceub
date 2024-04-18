@@ -3,17 +3,28 @@
 <div class="card">
   <div class="card-body">
 
+    <p>
+      <strong>Nome do profissional:</strong>
+      <%= @appointment.professional.name %>
+    </p>
+
+    <p>
+      <strong>Especialidade:</strong>
+      <%= @appointment.expertise.name %>
+    </p> 
+
     <div class="mb-3">
       <%= f.label :cpf, { class: "form-label"} %>
-      <%= f.text_field :document_number, { class: "form-control", placeholder: "Site Name" } %>
+      <%= f.text_field :document_number, { class: "form-control", placeholder: "CPF" } %>
     </div>
 
     <div class="mb-3">
       <%= f.label :nome, { class: "form-label"} %>
-      <%= f.text_field :client_name, { class: "form-control", placeholder: "Site Code" } %>
+      <%= f.text_field :client_name, { class: "form-control", placeholder: "Nome" } %>
     </div>
 
-
+    <hr class="col-xs-12">
+    
     <%= f.submit "Finalizar agendamento", class: "btn btn-primary" %>
 
   </div>
@@ -21,12 +32,14 @@
 
   <% if @appointment.errors.any? %>
     <div class="card" id="error_explanation">
-      <h2><%= pluralize(@appointment.errors.count, "error") %> </h2>
-      <ul>
-      <% @appointment.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+      <div class="card-body">
+        <h2><%= pluralize(@appointment.errors.count, "erro") %> </h2>
+        <ul>
+        <% @appointment.errors.messages.each do |message| %>
+          <li><%= message[1][0] %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 <% end %>
