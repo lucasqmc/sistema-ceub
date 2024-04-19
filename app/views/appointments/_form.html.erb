@@ -2,6 +2,16 @@
 
 <div class="card">
   <div class="card-body">
+    
+    <p>
+      <strong>Inicio:</strong>
+      <%= I18n.l(@appointment.start_at, format: "%d/%m de %Y às %H:%M") %>
+    </p>
+
+    <p>
+      <strong>Fim:</strong>
+      <%= I18n.l(@appointment.end_at, format: "%d/%m de %Y às %H:%M") %>
+    </p>    
 
     <p>
       <strong>Nome do profissional:</strong>
@@ -24,7 +34,7 @@
     </div>
 
     <hr class="col-xs-12">
-    
+
     <%= f.submit "Finalizar agendamento", class: "btn btn-primary" %>
 
   </div>
