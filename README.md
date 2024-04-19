@@ -1,5 +1,16 @@
 # README
 
+## Descrição
+
+Projeto desenvolvido em Ruby on Rails para a disciplina de Desenvolvimento web na Universidade UniCeub
+
+## Funcionalidades
+
+  - Listagem de profissionais, especialidades e horários disponíveis.
+  - Possibilidade de agendar uma consulta inserindo cpf e nome.
+  - Possibilidade de pesquisar uma consulta por cpf.
+  - Possibilidade de cancelar a consulta pesquisada.
+
  
 Tabela de conteúdos
 -----------
